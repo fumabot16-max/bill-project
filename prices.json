@@ -13,14 +13,14 @@
     "gemini-3-flash-preview": {"in": 0.075, "out": 0.3}
   },
   "kimi": {
-    "kimi-k2.5": {"in": 0.0, "out": 0.0}
+    "kimi-k2.5": {"in": 0.50, "out": 2.40}
   },
   "deepseek": {
     "deepseek-v3": {"in": 0.14, "out": 0.28}
   },
   "grok": {
-    "grok-1": {"in": 0.0, "out": 0.0}
+    "grok-1": {"in": 5.0, "out": 15.0}
   },
-  "updated_at": "2026-02-06T03:28:40Z",
+  "updated_at": "2026-02-08T10:10:00Z",
   "author": "Tiger Jung & Chloe"
 }
