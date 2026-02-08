@@ -74,8 +74,14 @@
     </footer>
 
     <script>
-        let SECURE_CODE = "0119";
-        window.onload = function() { if(localStorage.getItem('bill_unlocked') === 'true') document.getElementById('lock-screen').classList.add('unlocked'); };
+        let SECURE_CODE = "1234";
+        window.onload = function() { 
+            // 신규 접속 시 항상 잠금 상태로 시작 (자동 로그인 해제)
+            localStorage.removeItem('bill_unlocked');
+            document.getElementById('lock-screen').classList.remove('unlocked');
+            document.getElementById('pass-input').value = "";
+            document.getElementById('pass-input').focus();
+        };
         function checkPass(v) {
             const s = document.getElementById('lock-status');
             if(v.length===4) {
@@ -98,7 +104,7 @@
         const config = [{id:'openai',name:'OpenAI',color:'#10b981'},{id:'claude',name:'Claude',color:'#fb923c'},{id:'gemini',name:'Gemini',color:'#3b82f6'},{id:'kimi',name:'Kimi',color:'#a855f7'},{id:'deepseek',name:'DeepSeek',color:'#06b6d4'},{id:'grok',name:'Grok',color:'#ffffff'}];
         async function fetchAndUpdate() {
             try {
-                const res = await fetch('/usage_live.json?t=' + Date.now());
+                const res = await fetch('/usage.json?t=' + Date.now());
                 const data = await res.json();
                 let total = 0; let html = '';
                 config.forEach(m => {
