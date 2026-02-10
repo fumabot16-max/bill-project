@@ -1,31 +1,29 @@
 {
-  "timestamp": "2026-02-08T09:33:30.848Z",
+  "timestamp": "2026-02-10T12:18:34.777Z",
   "models": {
     "openai": "0.0000",
     "claude": "0.0021",
-    "gemini": "0.0215",
-    "kimi": "0.0000",
-    "deepseek": "0.0001",
+    "gemini": "0.0252",
+    "kimi": "0.1699",
+    "deepseek": "0.0000",
     "grok": "0.0000",
-    "openai_bal": "9.18",
+    "openai_bal": "0.00",
     "openai_stats": {},
-    "claude_bal": "20.53",
+    "claude_bal": "-0.00",
     "claude_stats": {
       "CLAUDE OPUS 4 5 20251101": 149
     },
     "gemini_bal": "POST",
     "gemini_stats": {
-      "GEMINI 3 FLASH PREVIEW": 280029
+      "GEMINI 3 FLASH PREVIEW": 328071
     },
-    "kimi_bal": "15.80",
+    "kimi_bal": "-0.17",
     "kimi_stats": {
-      "KIMI K2.5": 210207
+      "KIMI K2.5": 330271
     },
-    "deepseek_bal": "8.46",
-    "deepseek_stats": {
-      "DEEPSEEK CHAT": 455
-    },
-    "grok_bal": "10.00",
+    "deepseek_bal": "0.00",
+    "deepseek_stats": {},
+    "grok_bal": "0.00",
     "grok_stats": {}
   }
 }

@@ -1,0 +1,17 @@
+[Unit]
+Description=AI Bill Intelligence Collector Service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/.openclaw/workspace/ai-bill
+ExecStart=/usr/bin/node collector.js
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+Environment=OPENCLAW_SESSIONS=/root/.openclaw/agents/main/sessions/sessions.json
+
+[Install]
+WantedBy=multi-user.target

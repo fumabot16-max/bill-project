@@ -1,8 +1,8 @@
 {
-  "openai": 9.18,
-  "claude": 20.53,
-  "grok": 10,
-  "kimi": 15.79811,
-  "deepseek": 8.46,
+  "openai": 0,
+  "claude": 0,
+  "grok": 0,
+  "kimi": 0,
+  "deepseek": 0,
   "gemini": 0
 }
