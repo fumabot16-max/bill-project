@@ -1,0 +1,10 @@
+{
+  "openai": 0,
+  "claude": 0.02139,
+  "gemini": 0.03158684999999999,
+  "kimi": 2.457210200000001,
+  "deepseek": 0,
+  "grok": 0,
+  "lastReset": "2026-02-12T21:37:00Z",
+  "note": "Initialized with estimated missing usage from Moonshot"
+}
