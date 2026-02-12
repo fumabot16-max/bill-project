@@ -4,8 +4,8 @@
     "gpt-4o-mini": {"in": 0.15, "out": 0.6}
   },
   "claude": {
-    "claude-3-5-sonnet-latest": {"in": 3.0, "out": 15.0},
-    "claude-3-opus-latest": {"in": 15.0, "out": 75.0}
+    "sonnet": {"in": 3.0, "out": 15.0},
+    "opus": {"in": 15.0, "out": 75.0}
   },
   "gemini": {
     "gemini-1.5-pro": {"in": 1.25, "out": 5.0},
