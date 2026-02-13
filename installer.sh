@@ -62,17 +62,32 @@ echo "⚙️  Configuration"
 echo "----------------"
 node setup.js
 
-# 6. Setup systemd services
+# 6. Setup systemd services or macOS launcher
 echo ""
 echo "🚀 Setting up services..."
 if command -v systemctl &> /dev/null; then
+    # Linux with systemd
     sudo cp systemd/*.service /etc/systemd/system/
     sudo systemctl daemon-reload
     sudo systemctl enable ai-bill ai-bill-collector
     sudo systemctl start ai-bill ai-bill-collector
     echo "✅ Services started!"
+    echo "   Start: sudo systemctl start ai-bill ai-bill-collector"
+    echo "   Stop: sudo systemctl stop ai-bill ai-bill-collector"
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    # macOS
+    chmod +x start-macos.sh
+    echo "🍎 macOS detected!"
+    echo ""
+    echo "To start, run:"
+    echo "   ~/.openclaw/skills/ai-bill-intelligence/start-macos.sh"
+    echo ""
+    # Auto-start for convenience
+    ./start-macos.sh
 else
-    echo "⚠️  systemctl not found. Please start manually:"
+    # Other systems
+    echo "⚠️  Manual start required:"
+    echo "   cd ~/.openclaw/skills/ai-bill-intelligence"
     echo "   node server.js &"
     echo "   node collector.js &"
 fi
