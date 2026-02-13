@@ -1,38 +1,72 @@
 #!/bin/bash
-# ==========================================
-# Tiger Edition: AI BILL INTELLIGENCE Installer
-# Version: v1.0.0 (Based on Dashboard v4.4.4)
-# ==========================================
 
-PORT=$1
-if [ -z "$PORT" ]; then
-  PORT=8004
+# AI Bill Intelligence - One-line Installer
+# Usage: curl -fsSL [URL] | bash
+
+set -e
+
+echo "🤖 AI Bill Intelligence Installer"
+echo "=================================="
+echo ""
+
+# 1. Create directory
+SKILL_DIR="$HOME/.openclaw/skills/ai-bill-intelligence"
+mkdir -p "$SKILL_DIR"
+cd "$SKILL_DIR"
+
+# 2. Download from GitHub
+echo "📥 Downloading..."
+if command -v wget &> /dev/null; then
+    wget -q https://github.com/fumabot16-max/project-bill/archive/refs/heads/master.zip -O master.zip
+elif command -v curl &> /dev/null; then
+    curl -fsSL https://github.com/fumabot16-max/project-bill/archive/refs/heads/master.zip -o master.zip
+else
+    echo "❌ Error: wget or curl required"
+    exit 1
 fi
 
-echo "🚀 Starting Tiger Edition AI Bill Installation on port $PORT..."
+# 3. Extract
+echo "📦 Extracting..."
+unzip -q master.zip
+mv project-bill-master/* .
+mv project-bill-master/.* . 2>/dev/null || true
+rm -rf project-bill-master master.zip
 
-# 1. Workspace 준비
-mkdir -p ./tiger-bill-test/dist
+# 4. Install dependencies
+echo "📦 Installing dependencies..."
+npm install --silent
 
-# 2. 데이터 수집기(Engine) 복사
-cp /root/.openclaw/workspace/ai-bill/collector.js ./tiger-bill-test/
-echo "✅ Collection Engine prepared."
+# 5. Run setup
+echo ""
+echo "⚙️  Configuration"
+echo "----------------"
+node setup.js
 
-# 3. 프리미엄 UI(Frontend) 복사
-cp /root/.openclaw/workspace/ai-bill/dist/index.html ./tiger-bill-test/dist/
-echo "✅ Premium UI assets linked."
+# 6. Setup systemd services
+echo ""
+echo "🚀 Setting up services..."
+if command -v systemctl &> /dev/null; then
+    sudo cp systemd/*.service /etc/systemd/system/
+    sudo systemctl daemon-reload
+    sudo systemctl enable ai-bill ai-bill-collector
+    sudo systemctl start ai-bill ai-bill-collector
+    echo "✅ Services started!"
+else
+    echo "⚠️  systemctl not found. Please start manually:"
+    echo "   node server.js &"
+    echo "   node collector.js &"
+fi
 
-# 4. Docker 독립 컨테이너 기동 (독립 원칙 준수)
-CONTAINER_NAME="tiger-bill-test-$PORT"
-docker rm -f $CONTAINER_NAME 2>/dev/null
-docker run -d --name $CONTAINER_NAME -p $PORT:80 nginx:alpine
-echo "✅ Dedicated container '$CONTAINER_NAME' is now LIVE."
-
-# 5. 초기 데이터 싱크 (Tiger 정밀 요금 로직 반영)
-echo "=========================================="
-echo "🎉 INSTALLATION SUCCESSFUL!"
-echo "Next Step (Interaction):"
-echo "1. Ask user for initial balances (done)."
-echo "2. ASK PERMISSION: 'Can I read sessions.json to track precise model pricing?'"
-echo "   (API keys will NOT be accessed unless specifically requested later)"
-echo "=========================================="
+echo ""
+echo "=================================="
+echo "✅ Installation Complete!"
+echo "=================================="
+echo ""
+echo "🌐 Dashboard: http://localhost:8003"
+echo ""
+echo "Check status:"
+echo "   systemctl status ai-bill ai-bill-collector"
+echo ""
+echo "View logs:"
+echo "   journalctl -u ai-bill-collector -f"
+echo ""

@@ -1,10 +1,10 @@
 {
   "openai": 0,
-  "claude": 39.51678,
-  "gemini": 0.6549281250000001,
-  "kimi": 5.329829400000002,
+  "claude": 0.02139,
+  "gemini": 1.0935393750000004,
+  "kimi": 7.510154800000013,
   "deepseek": 0,
   "grok": 0,
   "lastReset": "2026-02-12T21:37:00Z",
-  "note": "Kimi balance updated to $22 remaining"
+  "note": "Claude balance synced to $20.53, Kimi to $22"
 }
