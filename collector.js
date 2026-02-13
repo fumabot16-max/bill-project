@@ -49,8 +49,20 @@ async function calculateUsage() {
         const prices = JSON.parse(fs.readFileSync(PRICES_PATH, 'utf8'));
         
         let vault = { openai: 0, claude: 0, grok: 0, kimi: 0, deepseek: 0, gemini: 0 };
+        let isFirstSetup = false;
         if (fs.existsSync(VAULT_PATH)) {
             vault = JSON.parse(fs.readFileSync(VAULT_PATH, 'utf8'));
+            // Check if all balances are 0 (first time setup)
+            const allZero = Object.values(vault).every(v => v === 0 || v === undefined);
+            if (allZero) {
+                isFirstSetup = true;
+                console.log(`[${new Date().toLocaleTimeString()}] ⚠️  First time setup detected!`);
+                console.log(`[${new Date().toLocaleTimeString()}] Please run: node setup.js`);
+            }
+        } else {
+            isFirstSetup = true;
+            console.log(`[${new Date().toLocaleTimeString()}] ⚠️  vault.json not found!`);
+            console.log(`[${new Date().toLocaleTimeString()}] Please run: node setup.js`);
         }
         
         // 누적 사용량 로드
@@ -155,7 +167,7 @@ async function calculateUsage() {
 
 // 초기 실행
 calculateUsage();
-setInterval(calculateUsage, 30000);
+setInterval(calculateUsage, 27000);
 
 // 1시간마다 메모리 정리 (오래된 세션 기록 삭제)
 setInterval(() => {
