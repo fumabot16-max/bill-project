@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-13T12:46:55.011Z",
+  "timestamp": "2026-02-13T12:49:37.148Z",
   "models": {
     "openai": "0.0000",
     "openai_bal": "9.01",
@@ -14,10 +14,10 @@
     "gemini_stats": {
       "GEMINI 3 FLASH PREVIEW": 203832
     },
-    "kimi": "7.8119",
-    "kimi_bal": "18.28",
+    "kimi": "7.8280",
+    "kimi_bal": "18.26",
     "kimi_stats": {
-      "KIMI K2.5": 452875
+      "KIMI K2.5": 455909
     },
     "deepseek": "0.0000",
     "deepseek_bal": "7.32",

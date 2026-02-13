@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Bill Intelligence - Setup</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); min-height: 100vh; }
+        .glass { background: rgba(30, 41, 59, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
+        .input-glow:focus { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
+    </style>
+</head>
+<body class="text-white flex items-center justify-center p-4">
+    <div class="glass rounded-2xl p-8 max-w-md w-full">
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent">
+                AI Bill Intelligence
+            </h1>
+            <p class="text-gray-400 mt-2">Initial Setup</p>
+        </div>
+
+        <form id="setupForm" class="space-y-4">
+            <div>
+                <label class="block text-sm text-gray-400 mb-1">OpenAI Balance ($)</label>
+                <input type="number" step="0.01" id="openai" placeholder="예: 9.01" 
+                       class="w-full bg-slate-800 border border-slate-600 rounded-lg px-4 py-3 text-white placeholder-gray-500 input-glow focus:outline-none focus:border-blue-500 transition-all">
+            </div>
+
+            <div>
+                <label class="block text-sm text-gray-400 mb-1">Claude Balance ($)</label>
+                <input type="number" step="0.01" id="claude" placeholder="예: 20.53" 
+                       class="w-full bg-slate-800 border border-slate-600 rounded-lg px-4 py-3 text-white placeholder-gray-500 input-glow focus:outline-none focus:border-blue-500 transition-all">
+            </div>
+
+            <div>
+                <label class="block text-sm text-gray-400 mb-1">Kimi Balance ($)</label>
+                <input type="number" step="0.01" id="kimi" placeholder="예: 22.00" 
+                       class="w-full bg-slate-800 border border-slate-600 rounded-lg px-4 py-3 text-white placeholder-gray-500 input-glow focus:outline-none focus:border-blue-500 transition-all">
+            </div>
+
+            <div>
+                <label class="block text-sm text-gray-400 mb-1">DeepSeek Balance ($)</label>
+                <input type="number" step="0.01" id="deepseek" placeholder="예: 7.32" 
+                       class="w-full bg-slate-800 border border-slate-600 rounded-lg px-4 py-3 text-white placeholder-gray-500 input-glow focus:outline-none focus:border-blue-500 transition-all">
+            </div>
+
+            <div>
+                <label class="block text-sm text-gray-400 mb-1">Grok Balance ($)</label>
+                <input type="number" step="0.01" id="grok" placeholder="예: 10.00" 
+                       class="w-full bg-slate-800 border border-slate-600 rounded-lg px-4 py-3 text-white placeholder-gray-500 input-glow focus:outline-none focus:border-blue-500 transition-all">
+            </div>
+
+            <div class="pt-4">
+                <button type="submit" 
+                        class="w-full bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white font-bold py-4 rounded-lg transition-all transform hover:scale-[1.02] active:scale-[0.98]">
+                    💾 Save & Go to Dashboard
+                </button>
+            </div>
+        </form>
+
+        <div id="status" class="mt-4 text-center hidden"></div>
+    </div>
+
+    <script>
+        document.getElementById('setupForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const data = {
+                openai: parseFloat(document.getElementById('openai').value) || 0,
+                claude: parseFloat(document.getElementById('claude').value) || 0,
+                kimi: parseFloat(document.getElementById('kimi').value) || 0,
+                deepseek: parseFloat(document.getElementById('deepseek').value) || 0,
+                grok: parseFloat(document.getElementById('grok').value) || 0,
+                gemini: 0
+            };
+
+            try {
+                const response = await fetch('/api/setup', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    document.getElementById('status').innerHTML = 
+                        '<span class="text-emerald-400">✅ Saved! Redirecting...</span>';
+                    document.getElementById('status').classList.remove('hidden');
+                    setTimeout(() => window.location.href = '/', 1000);
+                } else {
+                    throw new Error('Failed to save');
+                }
+            } catch (err) {
+                document.getElementById('status').innerHTML = 
+                    '<span class="text-red-400">❌ Error: ' + err.message + '</span>';
+                document.getElementById('status').classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
