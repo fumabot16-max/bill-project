@@ -1,16 +1,27 @@
 {
   "openai": {
-    "gpt-4o": {"in": 5.0, "out": 15.0},
-    "gpt-4o-mini": {"in": 0.15, "out": 0.6}
+    "gpt-4o": {"in": 2.50, "out": 10.00},
+    "gpt-4o-mini": {"in": 0.15, "out": 0.60},
+    "gpt-5": {"in": 1.25, "out": 10.00},
+    "gpt-5-mini": {"in": 0.25, "out": 2.00},
+    "gpt-5-nano": {"in": 0.05, "out": 0.40},
+    "gpt-4.1": {"in": 2.00, "out": 8.00},
+    "gpt-4.1-mini": {"in": 0.40, "out": 1.60},
+    "o1": {"in": 15.00, "out": 60.00},
+    "o3": {"in": 2.00, "out": 8.00},
+    "o3-mini": {"in": 1.10, "out": 4.40},
+    "gpt-image-1": {"in": 5.00, "out": 10.00},
+    "gpt-image-1-mini": {"in": 2.00, "out": 8.00}
   },
   "claude": {
-    "sonnet": {"in": 3.0, "out": 15.0},
-    "opus": {"in": 15.0, "out": 75.0}
+    "sonnet-4-5-20250929": {"in": 3.00, "out": 15.00},
+    "sonnet-3-5": {"in": 3.00, "out": 15.00},
+    "opus-4-6": {"in": 15.00, "out": 75.00}
   },
   "gemini": {
-    "gemini-1.5-pro": {"in": 1.25, "out": 5.0},
-    "gemini-1.5-flash": {"in": 0.075, "out": 0.3},
-    "gemini-3-flash-preview": {"in": 0.075, "out": 0.3}
+    "gemini-3-pro-preview": {"in": 1.25, "out": 5.00},
+    "gemini-3-flash-preview": {"in": 0.075, "out": 0.30},
+    "gemini-2-0-flash": {"in": 0.10, "out": 0.40}
   },
   "kimi": {
     "kimi-k2.5": {"in": 0.50, "out": 2.40}
@@ -18,10 +29,19 @@
   "deepseek": {
     "deepseek-v3": {"in": 0.14, "out": 0.28}
   },
-  "grok": {
-    "grok-2-1212": {"in": 2.0, "out": 10.0},
-    "grok-2-mini-1212": {"in": 0.6, "out": 2.4}
+  "minimax": {
+    "MiniMax-M2.5": {"in": 0.20, "out": 0.80},
+    "MiniMax-M2.1": {"in": 0.20, "out": 0.80},
+    "MiniMax-M2.1-lightning": {"in": 0.10, "out": 0.40}
   },
-  "updated_at": "2026-02-08T10:10:00Z",
+  "xai": {
+    "grok-2-1212": {"in": 2.00, "out": 10.00},
+    "grok-2-mini-1212": {"in": 0.60, "out": 2.40}
+  },
+  "moonshot": {
+    "kimi-1.5": {"in": 0.50, "out": 2.00}
+  },
+  "updated_at": "2026-02-17T10:20:00Z",
+  "source": "https://developers.openai.com/api/docs/pricing",
   "author": "Tiger Jung & Chloe"
 }
