@@ -1,6 +1,6 @@
 {
   "name": "ai-bill-intelligence",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Real-time AI spending dashboard and billing intelligence for OpenClaw. Track OpenAI, Claude, Gemini, Kimi, DeepSeek, and Groq usage with smart onboarding.",
   "author": "fumarole16-afk",
   "repository": {
