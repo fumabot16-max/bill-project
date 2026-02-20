@@ -1,10 +1,10 @@
-# AI Bill Intelligence (v1.2.0)
+# AI Bill Intelligence (v1.2.2)
 
 Real-time billing dashboard for OpenClaw. Accurate token-based cost tracking across 12+ AI providers.
 
 ## 🚀 Installation
 ```bash
-openclaw skill install https://github.com/fumabot16-max/bill-project
+openclaw skill install https://github.com/fumabot16-max/project-bill
 ```
 
 ## 🛠 Usage
@@ -16,9 +16,13 @@ The skill operates via a background collector. As an agent, you can help the use
 ## ⚙️ Configuration
 - **Port**: Default is `8003`.
 - **Modes**: `prepaid`, `postpaid`, `subscribe`, `unused` (off).
-- **Files**:
-  - `vault.json`: User-set balances.
-  - `prices.json`: Model pricing data.
-  - `cumulative_usage.json`: Archived historical costs.
 
-Built by Tiger Jung & Chloe.
+## 📂 Managed Files (Declarations)
+This skill manages the following data files:
+- `vault.json`: User-defined balances and payment modes.
+- `prices.json`: AI model pricing data.
+- `cumulative_usage.json`: Archived costs from expired sessions.
+- `dist/usage.json`: Real-time aggregated usage data for the dashboard.
+- `debug.log`: Collector activity logs.
+
+Built by Tiger Jung & Chloe (@fumarole16-afk).
