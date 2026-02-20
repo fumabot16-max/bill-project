@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-20T13:36:18.831Z",
+  "timestamp": "2026-02-20T13:38:33.948Z",
   "runtime": {
     "provider": "minimax-portal",
     "model": "MiniMax-M2.5",
@@ -39,10 +39,10 @@
     "mistral": "0.0000",
     "mistral_bal": "OFF",
     "mistral_stats": {},
-    "qwen": "0.1687",
-    "qwen_bal": "-0.17",
+    "qwen": "0.4462",
+    "qwen_bal": "-0.45",
     "qwen_stats": {
-      "QWEN3.5:CLOUD": 417631
+      "QWEN3.5:CLOUD": 1110042
     },
     "glm": "0.0000",
     "glm_bal": "OFF",

@@ -1,4 +1,4 @@
-# AI Bill Intelligence (v1.2.2)
+# AI Bill Intelligence (v2.2.0)
 
 Real-time AI spending dashboard for OpenClaw. Track 12+ AI providers including OpenAI, Claude, Gemini, DeepSeek, Kimi, Groq, xAI, MiniMax, Mistral, Qwen, GLM, and Llama.
 
@@ -12,7 +12,7 @@ Run this command in your OpenClaw terminal:
 openclaw skill install https://github.com/fumabot16-max/bill-project
 ```
 
-## ✨ New in v1.2.2
+## ✨ New in v2.2.0
 - **Metadata Fixes:** Resolved mismatches and missing declarations for ClawHub security scans.
 - **Author Sync:** Updated author name to match ClawHub profile (@fumarole16-afk).
 - **12+ AI Brands Support:** Now tracks almost every major AI provider.
