@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-02-20T11:04:03.250Z",
+  "timestamp": "2026-02-20T12:03:57.177Z",
   "models": {
     "openai": "0.0000",
     "openai_bal": "9.01",
     "openai_stats": {},
-    "claude": "180.7601",
+    "claude": "180.7622",
     "claude_bal": "-160.23",
     "claude_stats": {
       "CLAUDE OPUS 4 5 20251101": 149
     },
-    "gemini": "2.9922",
+    "gemini": "3.0080",
     "gemini_bal": "POST",
     "gemini_stats": {
       "GEMINI 3 FLASH PREVIEW": 203832

@@ -85,9 +85,14 @@ app.get('/api/health', (req, res) => {
   });
 });
 
+// Direct file paths
+app.get('/usage.json', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'usage.json'));
+});
+
 // Redirect from old path
 app.get('/usage_live.json', (req, res) => {
-  res.redirect('/dist/usage.json');
+  res.redirect('/usage.json?' + Date.now());
 });
 
 app.listen(PORT, () => {
