@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-20T18:27:42.512Z",
+  "timestamp": "2026-02-21T18:28:02.583Z",
   "runtime": {
     "provider": "minimax-portal",
     "model": "MiniMax-M2.5",
@@ -10,14 +10,14 @@
     "openai_bal": "8.90",
     "openai_stats": {},
     "claude": "0.0021",
-    "claude_bal": "13.54",
+    "claude_bal": "10.10",
     "claude_stats": {
       "CLAUDE OPUS 4 5 20251101": 149
     },
-    "gemini": "0.2632",
+    "gemini": "0.3634",
     "gemini_bal": "POST",
     "gemini_stats": {
-      "GEMINI 3 FLASH PREVIEW": 203832
+      "GEMINI 3 FLASH PREVIEW": 283866
     },
     "deepseek": "0.0000",
     "deepseek_bal": "7.28",
@@ -31,18 +31,18 @@
     "xai": "0.0000",
     "xai_bal": "OFF",
     "xai_stats": {},
-    "minimax": "0.2860",
+    "minimax": "0.7252",
     "minimax_bal": "SUB",
     "minimax_stats": {
-      "MINIMAX M2.5": 1180173
+      "MINIMAX M2.5": 2934227
     },
     "mistral": "0.0000",
     "mistral_bal": "OFF",
     "mistral_stats": {},
-    "qwen": "0.3252",
-    "qwen_bal": "-0.33",
+    "qwen": "0.8866",
+    "qwen_bal": "-0.89",
     "qwen_stats": {
-      "QWEN3.5:CLOUD": 288343
+      "QWEN3.5:CLOUD": 127512
     },
     "glm": "0.0000",
     "glm_bal": "OFF",
