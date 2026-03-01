@@ -49,6 +49,58 @@ app.get('/api/vault', (req, res) => {
   }
 });
 
+// Function to immediately update usage.json after vault save
+function updateUsageJsonImmediate(vault) {
+  try {
+    const usagePath = path.join(__dirname, 'dist', 'usage.json');
+    const webLivePath = '/var/www/html/bill/usage_live.json';
+    const webMainPath = '/var/www/html/bill/usage.json';
+    
+    let existingUsage = {};
+    if (fs.existsSync(usagePath)) {
+      existingUsage = JSON.parse(fs.readFileSync(usagePath, 'utf8'));
+    }
+    
+    const BRANDS = ['openai', 'claude', 'gemini', 'deepseek', 'kimi', 'groq', 'xai', 'minimax', 'mistral', 'qwen', 'glm', 'llama'];
+    const models = {};
+    
+    BRANDS.forEach(k => {
+      const cost = parseFloat(existingUsage.models?.[k] || 0);
+      const vaultItem = vault[k] || { balance: 0, mode: 'prepaid' };
+      const balBase = parseFloat(vaultItem.balance || 0);
+      const mode = vaultItem.mode || 'prepaid';
+      
+      models[k] = cost.toFixed(4);
+      
+      if (mode === 'postpaid') {
+        models[k + '_bal'] = "POST";
+      } else if (mode === 'subscribe') {
+        models[k + '_bal'] = "SUB";
+      } else if (mode === 'unused') {
+        models[k + '_bal'] = "OFF";
+      } else {
+        models[k + '_bal'] = (balBase - cost).toFixed(2);
+      }
+      
+      models[k + '_stats'] = existingUsage.models?.[k + '_stats'] || {};
+    });
+    
+    const usageData = {
+      timestamp: new Date().toISOString(),
+      runtime: existingUsage.runtime || { provider: 'minimax-portal', model: 'MiniMax-M2.5' },
+      models: models
+    };
+    
+    fs.writeFileSync(usagePath, JSON.stringify(usageData, null, 2));
+    if (fs.existsSync(webLivePath)) fs.writeFileSync(webLivePath, JSON.stringify(usageData, null, 2));
+    if (fs.existsSync(webMainPath)) fs.writeFileSync(webMainPath, JSON.stringify(usageData, null, 2));
+    
+    console.log('[Setup] Usage.json updated immediately');
+  } catch (e) {
+    console.error('[Setup] Failed to update usage.json:', e.message);
+  }
+}
+
 // API: Save setup
 app.post('/api/setup', (req, res) => {
   try {
@@ -67,6 +119,10 @@ app.post('/api/setup', (req, res) => {
     });
     
     fs.writeFileSync(vaultPath, JSON.stringify(data, null, 2));
+    
+    // Immediately update usage.json
+    updateUsageJsonImmediate(data);
+    
     res.json({ status: 'success', message: 'Configuration saved' });
   } catch (error) {
     res.status(500).json({ status: 'error', message: error.message });
