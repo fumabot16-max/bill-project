@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-01T03:00:00Z",
+  "updated_at": "2026-03-08T03:00:00Z",
   "sources": [
     "https://developers.openai.com/api/docs/pricing",
     "https://platform.claude.com/docs/en/about-claude/pricing",
@@ -10,7 +10,30 @@
     "https://docs.x.ai/developers/models"
   ],
   "openai": {
+    "gpt-5.4": {
+      "input": 2.50,
+      "cached_input": 0.25,
+      "output": 15.00,
+      "note": "<272K context"
+    },
+    "gpt-5.4-long": {
+      "input": 5.00,
+      "cached_input": 0.50,
+      "output": 22.50,
+      "note": ">272K context"
+    },
+    "gpt-5.4-pro": {
+      "input": 30.00,
+      "output": 180.00,
+      "note": "<272K context"
+    },
+    "gpt-5.4-pro-long": {
+      "input": 60.00,
+      "output": 270.00,
+      "note": ">272K context"
+    },
     "gpt-5.3-codex": { "input": 1.75, "output": 14.00, "cached_input": 0.175 },
+    "gpt-5.3-chat-latest": { "input": 1.75, "output": 14.00, "cached_input": 0.175 },
     "gpt-5.2": { "input": 1.75, "output": 14.00, "cached_input": 0.175 },
     "gpt-5.2-chat-latest": { "input": 1.75, "output": 14.00, "cached_input": 0.175 },
     "gpt-5.1": { "input": 1.25, "output": 10.00, "cached_input": 0.125 },
@@ -29,6 +52,9 @@
     "gpt-realtime": { "input": 4.00, "output": 16.00, "cached_input": 0.40 },
     "gpt-realtime-1.5": { "input": 4.00, "output": 16.00, "cached_input": 0.40 },
     "gpt-realtime-mini": { "input": 0.60, "output": 2.40, "cached_input": 0.06 },
+    "gpt-audio": { "input": 2.50, "output": 10.00 },
+    "gpt-audio-1.5": { "input": 2.50, "output": 10.00 },
+    "gpt-audio-mini": { "input": 0.60, "output": 2.40 },
     "o1": { "input": 15.00, "output": 60.00, "cached_input": 7.50 },
     "o1-pro": { "input": 150.00, "output": 600.00 },
     "o1-mini": { "input": 1.10, "output": 4.40, "cached_input": 0.55 },
@@ -57,6 +83,7 @@
   },
   "claude": {
     "opus-4.6": { "input": 5.00, "output": 25.00, "cache_read": 0.50, "cache_write_5m": 6.25, "cache_write_1h": 10.00 },
+    "opus-4.6-fast": { "input": 30.00, "output": 150.00, "note": "Fast mode" },
     "opus-4.5": { "input": 5.00, "output": 25.00, "cache_read": 0.50, "cache_write_5m": 6.25, "cache_write_1h": 10.00 },
     "opus-4.1": { "input": 15.00, "output": 75.00, "cache_read": 1.50, "cache_write_5m": 18.75, "cache_write_1h": 30.00 },
     "sonnet-4.6": { "input": 3.00, "output": 15.00, "cache_read": 0.30, "cache_write_5m": 3.75, "cache_write_1h": 6.00 },
@@ -66,14 +93,18 @@
     "haiku-3": { "input": 0.25, "output": 1.25, "cache_read": 0.03, "cache_write_5m": 0.30, "cache_write_1h": 0.50 }
   },
   "gemini": {
-    "gemini-2.5-pro": { "input": 1.25, "output": 10.00, "context_200k": true },
+    "gemini-3-pro": { "input": 2.00, "output": 12.00, "context_200k": true, "input_long": 4.00, "output_long": 18.00 },
+    "gemini-3-flash": { "input": 0.50, "output": 3.00 },
+    "gemini-3-flash-lite": { "input": 0.25, "output": 1.50 },
+    "gemini-2.5-pro": { "input": 1.25, "output": 10.00, "context_200k": true, "input_long": 2.50, "output_long": 15.00 },
     "gemini-2.5-flash": { "input": 0.30, "output": 2.50 },
     "gemini-2.5-flash-lite": { "input": 0.10, "output": 0.40 },
-    "gemini-3-pro": { "input": 2.00, "output": 12.00, "context_200k": true },
-    "gemini-3-flash": { "input": 0.50, "output": 3.00 }
+    "gemini-2.5-flash-live": { "input": 0.50, "output": 2.00, "note": "Live API text" },
+    "gemini-2.5-pro-computer-use": { "input": 1.25, "output": 10.00 }
   },
   "deepseek": {
     "deepseek-v3": { "input": 0.14, "output": 0.28 },
+    "deepseek-v3.2": { "input": 0.14, "output": 0.28 },
     "deepseek-r1": { "input": 0.14, "output": 0.28 }
   },
   "minimax": {
@@ -95,11 +126,16 @@
   "grok": {
     "grok-4-fast-reasoning": { "input": 0.20, "output": 0.50, "cache_input": 0.05, "context": 2000000 },
     "grok-4-fast-non-reasoning": { "input": 0.20, "output": 0.50, "cache_input": 0.05, "context": 2000000 },
+    "grok-4-1-fast-reasoning": { "input": 0.20, "output": 0.50, "cache_input": 0.05, "context": 2000000 },
+    "grok-4-1-fast-non-reasoning": { "input": 0.20, "output": 0.50, "cache_input": 0.05, "context": 2000000 },
     "grok-4-0709": { "input": 3.00, "output": 15.00, "cache_input": 0.75, "context": 256000 },
     "grok-3": { "input": 3.00, "output": 15.00, "cache_input": 0.75, "context": 131072 },
     "grok-3-mini": { "input": 0.30, "output": 0.50, "cache_input": 0.07, "context": 131072 },
-    "grok-code-fast-1": { "input": 0.20, "output": 1.50, "cache_input": 0.02, "context": 256000 }
+    "grok-code-fast-1": { "input": 0.20, "output": 1.50, "cache_input": 0.02, "context": 256000 },
+    "grok-imagine-image": { "input": 0.02, "output": null, "unit": "per image" },
+    "grok-imagine-image-pro": { "input": 0.07, "output": null, "unit": "per image" },
+    "grok-imagine-video": { "input": 0.05, "output": null, "unit": "per second" }
   },
   "notes": "All prices are in USD per 1M tokens unless otherwise specified. Cache prices are for cache hits. Some providers have tiered pricing based on context length (>200K tokens).",
-  "last_verified": "2026-03-01"
+  "last_verified": "2026-03-08"
 }
