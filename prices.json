@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-08T03:00:00Z",
+  "updated_at": "2026-03-09T00:16:00Z",
   "sources": [
     "https://developers.openai.com/api/docs/pricing",
     "https://platform.claude.com/docs/en/about-claude/pricing",
@@ -61,6 +61,7 @@
     "o3": { "input": 2.00, "output": 8.00, "cached_input": 0.50 },
     "o3-pro": { "input": 20.00, "output": 80.00 },
     "o3-mini": { "input": 1.10, "output": 4.40, "cached_input": 0.55 },
+    "gpt-5.1-codex-mini": { "input": 0.25, "output": 2.00, "cached_input": 0.025 },
     "o3-deep-research": { "input": 10.00, "output": 40.00, "cached_input": 2.50 },
     "o4-mini": { "input": 1.10, "output": 4.40, "cached_input": 0.275 },
     "o4-mini-deep-research": { "input": 2.00, "output": 8.00, "cached_input": 0.50 },
@@ -137,5 +138,5 @@
     "grok-imagine-video": { "input": 0.05, "output": null, "unit": "per second" }
   },
   "notes": "All prices are in USD per 1M tokens unless otherwise specified. Cache prices are for cache hits. Some providers have tiered pricing based on context length (>200K tokens).",
-  "last_verified": "2026-03-08"
+  "last_verified": "2026-03-09"
 }
