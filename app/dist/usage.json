@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-11T18:27:55.671Z",
+  "timestamp": "2026-03-12T18:27:40.479Z",
   "runtime": {
     "provider": "minimax-portal",
     "model": "MiniMax-M2.5",
@@ -31,10 +31,10 @@
     "xai": "0.0000",
     "xai_bal": "OFF",
     "xai_stats": {},
-    "minimax": "3.3952",
+    "minimax": "4.0241",
     "minimax_bal": "SUB",
     "minimax_stats": {
-      "MINIMAX M2.5": 2898737
+      "MINIMAX M2.5": 5251202
     },
     "mistral": "0.0000",
     "mistral_bal": "OFF",
