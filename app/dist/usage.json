@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-12T18:27:40.479Z",
+  "timestamp": "2026-03-13T18:28:00.983Z",
   "runtime": {
     "provider": "minimax-portal",
     "model": "MiniMax-M2.5",
@@ -31,18 +31,18 @@
     "xai": "0.0000",
     "xai_bal": "OFF",
     "xai_stats": {},
-    "minimax": "4.0241",
+    "minimax": "4.7742",
     "minimax_bal": "SUB",
     "minimax_stats": {
-      "MINIMAX M2.5": 5251202
+      "MINIMAX M2.5": 7128277
     },
     "mistral": "0.0000",
     "mistral_bal": "OFF",
     "mistral_stats": {},
-    "qwen": "4.8798",
+    "qwen": "4.8823",
     "qwen_bal": "-4.88",
     "qwen_stats": {
-      "QWEN3.5:CLOUD": 395799
+      "QWEN3.5:CLOUD": 400215
     },
     "glm": "0.0000",
     "glm_bal": "OFF",
