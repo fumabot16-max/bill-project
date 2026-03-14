@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-09T00:16:00Z",
+  "updated_at": "2026-03-14T18:00:00Z",
   "sources": [
     "https://developers.openai.com/api/docs/pricing",
     "https://platform.claude.com/docs/en/about-claude/pricing",
@@ -49,12 +49,12 @@
     "gpt-4.1-nano": { "input": 0.10, "output": 0.40, "cached_input": 0.025 },
     "gpt-4o": { "input": 2.50, "output": 10.00, "cached_input": 1.25 },
     "gpt-4o-mini": { "input": 0.15, "output": 0.60, "cached_input": 0.075 },
-    "gpt-realtime": { "input": 4.00, "output": 16.00, "cached_input": 0.40 },
-    "gpt-realtime-1.5": { "input": 4.00, "output": 16.00, "cached_input": 0.40 },
-    "gpt-realtime-mini": { "input": 0.60, "output": 2.40, "cached_input": 0.06 },
-    "gpt-audio": { "input": 2.50, "output": 10.00 },
-    "gpt-audio-1.5": { "input": 2.50, "output": 10.00 },
-    "gpt-audio-mini": { "input": 0.60, "output": 2.40 },
+    "gpt-realtime": { "input": 32.00, "output": 64.00, "cached_input": 0.40 },
+    "gpt-realtime-1.5": { "input": 32.00, "output": 64.00, "cached_input": 0.40 },
+    "gpt-realtime-mini": { "input": 10.00, "output": 20.00, "cached_input": 0.30 },
+    "gpt-audio": { "input": 32.00, "output": 64.00 },
+    "gpt-audio-1.5": { "input": 32.00, "output": 64.00 },
+    "gpt-audio-mini": { "input": 10.00, "output": 20.00 },
     "o1": { "input": 15.00, "output": 60.00, "cached_input": 7.50 },
     "o1-pro": { "input": 150.00, "output": 600.00 },
     "o1-mini": { "input": 1.10, "output": 4.40, "cached_input": 0.55 },
@@ -68,10 +68,10 @@
     "codex-mini-latest": { "input": 1.50, "output": 6.00, "cached_input": 0.375 },
     "gpt-5-search-api": { "input": 1.25, "output": 10.00, "cached_input": 0.125 },
     "computer-use-preview": { "input": 3.00, "output": 12.00 },
-    "gpt-image-1.5": { "input": 5.00, "output": 10.00, "cached_input": 1.25 },
-    "chatgpt-image-latest": { "input": 5.00, "output": 10.00, "cached_input": 1.25 },
+    "gpt-image-1.5": { "input": 8.00, "output": 32.00, "cached_input": 2.00 },
+    "chatgpt-image-latest": { "input": 8.00, "output": 32.00, "cached_input": 2.00 },
     "gpt-image-1": { "input": 5.00, "output": null, "cached_input": 1.25 },
-    "gpt-image-1-mini": { "input": 2.00, "output": null, "cached_input": 0.20 },
+    "gpt-image-1-mini": { "input": 2.50, "output": 8.00, "cached_input": 0.25 },
     "text-embedding-3-small": { "input": 0.02, "output": null },
     "text-embedding-3-large": { "input": 0.13, "output": null },
     "whisper": { "input": 0.006, "output": null, "unit": "per minute" },
@@ -80,7 +80,7 @@
     "gpt-4o-mini-tts": { "input": 0.60, "output": 0.015, "unit": "per minute" },
     "sora-2": { "input": 0.10, "output": null, "unit": "per second" },
     "sora-2-pro": { "input": 0.30, "output": null, "unit": "per second", "note": "720p" },
-    "sora-2-pro-1080p": { "input": 0.50, "output": null, "unit": "per second" }
+    "sora-2-pro-1080p": { "input": 0.70, "output": null, "unit": "per second" }
   },
   "claude": {
     "opus-4.6": { "input": 5.00, "output": 25.00, "cache_read": 0.50, "cache_write_5m": 6.25, "cache_write_1h": 10.00 },
@@ -125,6 +125,9 @@
     "moonshot-v1-32k": { "input": 1.00, "output": 3.00, "context": 32768 }
   },
   "grok": {
+    "grok-4.20": { "input": 2.00, "output": 6.00, "cache_input": 0.20, "context": 2000000 },
+    "grok-4.20-reasoning": { "input": 2.00, "output": 6.00, "cache_input": 0.20, "context": 2000000 },
+    "grok-4.20-non-reasoning": { "input": 2.00, "output": 6.00, "cache_input": 0.20, "context": 2000000 },
     "grok-4-fast-reasoning": { "input": 0.20, "output": 0.50, "cache_input": 0.05, "context": 2000000 },
     "grok-4-fast-non-reasoning": { "input": 0.20, "output": 0.50, "cache_input": 0.05, "context": 2000000 },
     "grok-4-1-fast-reasoning": { "input": 0.20, "output": 0.50, "cache_input": 0.05, "context": 2000000 },
@@ -138,5 +141,5 @@
     "grok-imagine-video": { "input": 0.05, "output": null, "unit": "per second" }
   },
   "notes": "All prices are in USD per 1M tokens unless otherwise specified. Cache prices are for cache hits. Some providers have tiered pricing based on context length (>200K tokens).",
-  "last_verified": "2026-03-09"
+  "last_verified": "2026-03-14"
 }
