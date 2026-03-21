@@ -1,12 +1,12 @@
 {
   "openai": 0,
   "claude": 0,
-  "gemini": 11.412066250000002,
+  "gemini": 11.615460000000002,
   "kimi": 0,
   "deepseek": 0,
   "groq": 0,
   "lastReset": "2026-02-20T21:20:00Z",
   "note": "Tiger requested fresh start with updated balances",
-  "qwen": 4.813376400000009,
-  "minimax": 5.887432800000006
+  "qwen": 4.848072000000011,
+  "minimax": 6.063973600000007
 }
