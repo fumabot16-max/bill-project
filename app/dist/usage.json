@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-21T18:28:05.498Z",
+  "timestamp": "2026-03-22T18:27:52.526Z",
   "runtime": {
     "provider": "minimax-portal",
     "model": "MiniMax-M2.5",
@@ -14,10 +14,10 @@
     "claude_stats": {
       "CLAUDE OPUS 4 5 20251101": 149
     },
-    "gemini": "15.7774",
+    "gemini": "19.0385",
     "gemini_bal": "POST",
     "gemini_stats": {
-      "GEMINI 3 FLASH PREVIEW": 3283245
+      "GEMINI 3 FLASH PREVIEW": 1511508
     },
     "deepseek": "0.0000",
     "deepseek_bal": "7.28",
@@ -31,18 +31,18 @@
     "xai": "0.0000",
     "xai_bal": "OFF",
     "xai_stats": {},
-    "minimax": "6.6171",
+    "minimax": "6.8177",
     "minimax_bal": "SUB",
     "minimax_stats": {
-      "MINIMAX M2.5": 2661819
+      "MINIMAX M2.5": 3038248
     },
     "mistral": "0.0000",
     "mistral_bal": "OFF",
     "mistral_stats": {},
-    "qwen": "5.0717",
-    "qwen_bal": "-5.07",
+    "qwen": "5.0432",
+    "qwen_bal": "-5.04",
     "qwen_stats": {
-      "QWEN3.5:CLOUD": 528972
+      "QWEN3.5:CLOUD": 395799
     },
     "glm": "0.0000",
     "glm_bal": "OFF",
